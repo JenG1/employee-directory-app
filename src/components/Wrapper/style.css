@@ -2,5 +2,7 @@
   min-height: 100%;
   padding-bottom: 100px;
   background-image: url("/../bckgrnd.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   color:#fff;
 }
