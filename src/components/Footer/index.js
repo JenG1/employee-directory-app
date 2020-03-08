@@ -4,7 +4,7 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span>Employee Direct 2020</span>
+      <span className="text-center">Employee Direct 2020</span>
     </footer>
   );
 }
