@@ -10,18 +10,18 @@ function SearchForm(props) {
         <input
           value={props.search}
           onChange={props.handleInputChange}
-          name="breed"
-          list="breeds"
+          name="person"
+          list="persons"
           type="text"
           className="form-control"
           placeholder="John Smith..."
-          id="breed"
+          id="person"
         />
-        <datalist id="breeds">
-          {props.breeds.map(breed => (
-            <option value={breed} key={breed} />
+        {/* <datalist id="persons">
+          {props.persons.map(person => (
+            <option value={person} key={person} />
           ))}
-        </datalist>
+        </datalist> */}
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-outline-light">
           Search
         </button>
