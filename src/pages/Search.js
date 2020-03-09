@@ -7,7 +7,8 @@ import SearchForm from "../components/SearchForm";
 
 class Search extends Component {
   state = {
-    persons: []
+    persons: [],
+    search: ""
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.persons
