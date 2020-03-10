@@ -5,11 +5,11 @@ function EmployeeCard(props) {
   const { usernames } = props
   return (
 
-    <div className="card center">
+    <div className="card">
       <div className="content">
         <ul>
           {usernames.map(user => 
-          <li key={user.id}>Name: {user.name} Age: {user.age} </li>
+          <li key={user.id}><div>Name: {user.name}</div>Age: {user.age} </li>
           )}
         </ul>
       </div>

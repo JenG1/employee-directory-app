@@ -4,7 +4,6 @@
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 200px;
   border-radius: 10px;
   background-color: white;
@@ -13,15 +12,8 @@
 
 li{
   color:rgb(0, 0, 0);
-}
-.card > .img-container {
-  height: 60%;
-  overflow: hidden;
-  text-align: left;
-  background:#6CADDC;
-}
-.card > .img-container > img {
-  width: 60%
+  margin-left: -37%;
+  font-size: 13px;
 }
 
 .card > .content {
@@ -36,17 +28,4 @@ li{
 
 .card > .content > ul > li {
   margin-top: 18px;
-}
-
-.card > .remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  cursor: pointer;
-}
-
-.card > .remove:hover {
-  color: #d50000;
 }
