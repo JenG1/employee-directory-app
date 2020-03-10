@@ -17,7 +17,7 @@ li{
 .card > .img-container {
   height: 60%;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   background:#6CADDC;
 }
 .card > .img-container > img {

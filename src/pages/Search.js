@@ -14,7 +14,8 @@ class Search extends Component {
     .then(json => json.data.results.map(result => (
       {
         name: `${result.name.first} ${result.name.last}`,
-        id: result.registered
+        id: result.registered,
+        age: `${result.registered.age}`
       })))
     .then(newData => this.setState({users: newData, store: newData}))
     .catch(error => alert(error))
@@ -29,8 +30,8 @@ class Search extends Component {
     <Container style={{ minHeight: "40%" }}>
       <div className="Card">
         <div className="header">EMPLOYEE DIRECT</div>
-        <SearchForm searchFunc={(e) => this.filterNames(e)}/>
-        <EmployeeCard usernames={users}/>
+        <SearchForm searchFunc= { event => this.filterNames(event)}/>
+        <EmployeeCard usernames= {users} />
       </div>
     </Container>
     </div>

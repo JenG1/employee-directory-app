@@ -8,13 +8,14 @@ function EmployeeCard(props) {
     <div className="card center">
       <div className="content">
         <ul>
-          {usernames.map(user => <li key={user.id}>{user.name}</li>)}
+          {usernames.map(user => 
+          <li key={user.id}>Name: {user.name} Age: {user.age} </li>
+          )}
         </ul>
       </div>
     </div>
   );
 }
-
 export default EmployeeCard;
 
 
