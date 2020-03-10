@@ -3,42 +3,37 @@ import API from "../utils/API";
 import Container from "../components/Container";
 import EmployeeCard from "../components/EmployeeCard";
 import SearchForm from "../components/SearchForm";
-
-
 class Search extends Component {
   state = {
-    persons: [],
-    search: ""
+    users: [],
+    store: []
   };
-
   // When the component mounts, get a list of all available base breeds and update this.state.persons
   componentDidMount() {
     API.getEmployeeList()
-      .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
-        console.log(persons);
-      })
-
+    .then(json => json.data.results.map(result => (
+      {
+        name: `${result.name.first} ${result.name.last}`,
+        id: result.registered
+      })))
+    .then(newData => this.setState({users: newData, store: newData}))
+    .catch(error => alert(error))
   }
-  handleInputChange = event => {
-    this.setState({ search: event.target.value });
+  filterNames = event => {
+    this.setState({users: this.state.store.filter(item => item.name.toLowerCase().includes(event.target.value.toLowerCase()))})
   };
   render() {
+    const {users} = this.state
     return (
-      <div>
-        <Container style={{ minHeight: "40%" }}>
-        <h1 className="text-center">Employee Direct</h1>
-        <SearchForm
-            // handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            breeds={this.state.persons}
-          />
-          {this.state.persons.map(person => (
-            <EmployeeCard />
-          ))}
-        </Container>
+    <div>
+    <Container style={{ minHeight: "40%" }}>
+      <div className="Card">
+        <div className="header">EMPLOYEE DIRECT</div>
+        <SearchForm searchFunc={(e) => this.filterNames(e)}/>
+        <EmployeeCard usernames={users}/>
       </div>
+    </Container>
+    </div>
     );
   }
 }

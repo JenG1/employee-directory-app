@@ -4,6 +4,6 @@ import axios from "axios";
 
 export default {
   getEmployeeList:function(){
-    return axios.get("https://jsonplaceholder.typicode.com/users");
+    return axios.get("https://randomuser.me/api/?results=10&inc=name,registered&nat=fr");
   }
 };
